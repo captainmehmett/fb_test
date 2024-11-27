@@ -4,22 +4,7 @@ document.getElementById("usernameForm").addEventListener("submit", function (eve
     const username = document.getElementById("username").value; // Kullanıcı adını al
     const contentDiv = document.getElementById("content"); // İçerik alanını seç
 
-    // AJAX isteği gönder
-    fetch("test.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: "username=" + encodeURIComponent(username),
-    })
-        .then((response) => response.text()) // Yanıtı al
-        .then((data) => {
-            contentDiv.innerHTML = data; // İlk soruyu içerik alanına yazdır
-            addColorSelectionListeners(); // Renk seçimi dinleyicilerini ekle
-        })
-        .catch((error) => {
-            console.error("Hata:", error); // Hata durumunda konsola yazdır
-        });
+
 });
 
 function addColorSelectionListeners() {
